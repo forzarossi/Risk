@@ -1,3 +1,8 @@
+package UI;
+
+import UI.ui;
+import UI.uiMap;
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -7,7 +12,7 @@ import java.awt.*;
 
 public class game extends JPanel {
     uiMap fr;
-    ui ui = new ui();
+    UI.ui ui = new ui();
 
     public game(uiMap frame){
         fr = frame;

@@ -1,3 +1,5 @@
+package coreElements;
+
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
@@ -134,7 +136,7 @@ public class region {
     }
 
     public void changePossession(region attacker){
-        System.out.println("The new owner of this region is: "+ attacker.owner.name);
+        System.out.println("The new owner of this coreElements.region is: "+ attacker.owner.name);
         this.owner.loseRegion(this);
         this.setOwner(attacker.owner);
         attacker.owner.addRegion(this);

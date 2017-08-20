@@ -1,3 +1,7 @@
+package UI;
+
+import coreElements.map;
+
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
@@ -26,7 +30,6 @@ public class uiMap extends JPanel{
             System.out.print("westros cannot be found");
         }
     }
-
 
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);

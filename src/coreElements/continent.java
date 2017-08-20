@@ -1,3 +1,7 @@
+package coreElements;
+
+import coreElements.region;
+
 import java.util.List;
 /**
  * Created by marcrossi on 8/14/17.

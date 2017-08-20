@@ -1,3 +1,8 @@
+package UI;
+
+import UI.uiMap;
+import coreElements.map;
+
 import javax.swing.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
