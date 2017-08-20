@@ -1,0 +1,72 @@
+import javax.swing.*;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
+
+/**
+ * Created by marcrossi on 8/1/17.
+ */
+public class Window extends JFrame implements KeyListener{
+    map westros = new map();
+    uiMap fr = new uiMap(westros);
+    game gm = new game(fr);
+
+    public int acceleration = 3;
+
+    public Window(){
+        setVisible(true);
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setSize(1200,1000);
+        setResizable(false);
+        addKeyListener(this);
+        add(gm);
+    }
+
+    public void keyTyped(KeyEvent e) {
+
+    }
+
+    public void keyPressed(KeyEvent e) {
+        int key = e.getKeyCode();
+
+        if (key == KeyEvent.VK_UP || key == KeyEvent.VK_W) {
+            if(westros.getY() <= 0) {
+                acceleration('y', '+');
+                fr.repaint();
+            }
+        }
+
+        if (key == KeyEvent.VK_DOWN || key == KeyEvent.VK_S) {
+            if(westros.getY() >= -1365) {
+                acceleration('y', '-');
+                fr.repaint();
+            }
+        }
+
+    }
+
+    public void keyReleased(KeyEvent e) {
+        int key = e.getKeyCode();
+
+        if(key == KeyEvent.VK_DOWN || key == KeyEvent.VK_S) {;
+            acceleration = 3;
+        }
+        if(key == KeyEvent.VK_UP || key == KeyEvent.VK_W) {;
+            acceleration = 3;
+        }
+    }
+
+    public void acceleration(char XorY, char MinusorPlus) {
+        if (XorY == 'y' && MinusorPlus == '+') {
+            westros.setY(westros.getY() + accelerationValue());
+        }
+
+        if (XorY == 'y' && MinusorPlus == '-') {
+            westros.setY(westros.getY() - accelerationValue());
+        }
+    }
+
+    public int accelerationValue() {
+        acceleration = (int) (acceleration * 1.5);
+        return acceleration;
+    }
+}
