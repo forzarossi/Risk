@@ -25,10 +25,11 @@ public class uiMap extends JPanel{
         Westros = westros;
 
         try {
-            map = ImageIO.read(new File("resources/westros.jpg"));
+            map = ImageIO.read(new File("westros.jpg"));
         } catch (IOException ex) {
             System.out.print("westros cannot be found");
         }
+        repaint();
     }
 
     protected void paintComponent(Graphics g) {

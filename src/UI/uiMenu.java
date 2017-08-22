@@ -6,11 +6,13 @@ import java.awt.*;
 /**
  * Created by marcrossi on 8/14/17.
  */
-public class ui extends JPanel {
-    public ui(){
+public class uiMenu extends JPanel {
+
+    public uiMenu(){
         setVisible(true);
-        setSize(100, 250);
-        setLocation(0,50);
+        setBackground(Color.red);
+        setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+
         repaint();
     }
 

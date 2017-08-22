@@ -1,9 +1,9 @@
 package UI;
 
-import UI.uiMap;
 import coreElements.map;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
@@ -13,17 +13,18 @@ import java.awt.event.KeyListener;
 public class Window extends JFrame implements KeyListener{
     map westros = new map();
     uiMap fr = new uiMap(westros);
-    game gm = new game(fr);
+    UI.splitPane splitPane = new splitPane(fr);
 
     public int acceleration = 3;
 
     public Window(){
         setVisible(true);
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setSize(1200,1000);
+        getContentPane().setLayout(new GridLayout());
         setResizable(false);
         addKeyListener(this);
-        add(gm);
+        getContentPane().add(splitPane);
     }
 
     public void keyTyped(KeyEvent e) {
