@@ -25,6 +25,7 @@ public class splitPane extends JSplitPane {
 
         setTopComponent(UIMAP);
         setBottomComponent(UIMENU);
+        repaint();
     }
 
 }

@@ -1,6 +1,7 @@
 package runner;
 
-import UI.Window;
+import UI.Game;
+import javax.swing.*;
 
 /**
  * Created by marcrossi on 8/1/17.
@@ -9,10 +10,10 @@ public class Main
 {
     public static void main(String args[])
     {
-        makeWindow();
+        IntroScreen();
     }
 
-    public static void makeWindow(){
-        Window w = new Window();
+    public static void IntroScreen(){
+        Game gm = new Game();
     }
 }

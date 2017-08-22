@@ -10,21 +10,38 @@ import java.awt.event.KeyListener;
 /**
  * Created by marcrossi on 8/1/17.
  */
-public class Window extends JFrame implements KeyListener{
+public class Game extends JFrame implements KeyListener{
     map westros = new map();
     uiMap fr = new uiMap(westros);
-    UI.splitPane splitPane = new splitPane(fr);
+    splitPane splitPane;
+    mainMenu mm;
 
     public int acceleration = 3;
 
-    public Window(){
+    public Game(){
         setVisible(true);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setSize(1200,1000);
         getContentPane().setLayout(new GridLayout());
         setResizable(false);
         addKeyListener(this);
+
+        mm = new mainMenu(this);
+        loadIntro();
+    }
+
+    public void loadIntro(){
+        add(mm);
+    }
+
+    public void startGame(){
+        remove(mm);
+        splitPane = new splitPane(fr);
+
+
         getContentPane().add(splitPane);
+        revalidate();
+        repaint();
     }
 
     public void keyTyped(KeyEvent e) {
