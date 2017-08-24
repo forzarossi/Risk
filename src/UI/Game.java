@@ -15,7 +15,7 @@ public class Game extends JFrame implements KeyListener{
     uiMap fr = new uiMap(westros);
     splitPane splitPane;
     mainMenu mm;
-
+    houseSelect HS;
     public int acceleration = 3;
 
     public Game(){
@@ -26,19 +26,29 @@ public class Game extends JFrame implements KeyListener{
         setResizable(false);
         addKeyListener(this);
 
-        mm = new mainMenu(this);
         loadIntro();
     }
 
     public void loadIntro(){
+        getContentPane().removeAll();
+        mm = new mainMenu(this);
+        getContentPane().add(mm);
         add(mm);
+        revalidate();
+        repaint();
+    }
+
+    public void loadHouseSelect() {
+        remove(mm);
+        HS = new houseSelect(this);
+        getContentPane().add(HS);
+        revalidate();
+        repaint();
     }
 
     public void startGame(){
-        remove(mm);
+        remove(HS);
         splitPane = new splitPane(fr);
-
-
         getContentPane().add(splitPane);
         revalidate();
         repaint();

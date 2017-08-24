@@ -1,15 +1,12 @@
 package UI;
 
 import coreElements.map;
-
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.KeyListener;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
-import java.security.Key;
 
 /**
  * Created by marcrossi on 8/1/17.

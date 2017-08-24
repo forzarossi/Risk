@@ -3,14 +3,12 @@
 1. Prompt user for number of human and AI players and on or offline
 2. Calculate starting armies
 3. Dice roll to decide turn order
-4. choose initial territories
 5. Reinforcements
 6. Place starting armies
 7. Risk cards
 8. fortifying territories
-
 9. Graphics
 10. AI
 11. Multiplayer
-
-
+12. Allies
+13. Currentcy
