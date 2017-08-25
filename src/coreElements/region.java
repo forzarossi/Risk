@@ -9,24 +9,17 @@ import java.util.Random;
  * Created by marcrossi on 8/14/17.
  */
 public class region {
-    Player owner;
     int unitsPresent;
-
+    String name;
     List<Integer> adjacent;
     boolean possession;
+    int income;
 
-    public region(Player o, int up, List<Integer> adj){
-        owner = o;
+    public region(String n, int up, List<Integer> adj, int in){
+        name = n;
         unitsPresent = up;
         adjacent = adj;
-    }
-
-    public void setOwner(Player o){
-        owner = o;
-    }
-
-    public Player getOwner(){
-        return owner;
+        income = in;
     }
 
     public void setUnitsPresent(int up){
@@ -37,6 +30,10 @@ public class region {
 
     public void setAdjacent(Integer an){
         adjacent.add(an);
+    }
+
+    public String getName(){
+        return name;
     }
 
     public boolean isAdjacent(region attacker){
@@ -129,21 +126,21 @@ public class region {
             i++;
         }
         if(this.unitsPresent == 0){
-            changePossession(attacker);
+            //changePossession(attacker);
             possession = true;
             return;
         }
     }
 
-    public void changePossession(region attacker){
-        System.out.println("The new owner of this coreElements.region is: "+ attacker.owner.name);
-        this.owner.loseRegion(this);
-        this.setOwner(attacker.owner);
-        attacker.owner.addRegion(this);
-        attacker.owner.numberOfregions++;
-        attacker.owner.canReinforce = true;
-        transferUnits();
-    }
+//    public void changePossession(region attacker){
+//        System.out.println("The new owner of this coreElements.region is: "+ attacker.owner.name);
+//        this.owner.loseRegion(this);
+//        this.setOwner(attacker.owner);
+//        attacker.owner.addRegion(this);
+//        attacker.owner.numberOfregions++;
+//        attacker.owner.canReinforce = true;
+//        transferUnits();
+//    }
 
     public void transferUnits(){
         //prompt user for number of unit to move into this new territory

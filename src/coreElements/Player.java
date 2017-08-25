@@ -6,21 +6,20 @@ import java.util.List;
 public class Player {
     int playerNumber;
     int numberOfregions;
+    house house;
     String name;
     List<region> regions;
 
     String color;
     boolean isAI;
-    boolean canReinforce;
 
-    public Player(String n, int pn, int nor, String c, boolean a) {
+    public Player(String n, house h,int pn, int nor, String c, boolean a) {
         name = n;
         playerNumber = pn;
         numberOfregions = nor;
         color = c;
         isAI = a;
-
-        canReinforce = false;
+        house = h;
         regions = new ArrayList<region>();
     }
 
@@ -60,15 +59,15 @@ public class Player {
         return isAI;
     }
 
+    public void setRegions(ArrayList<region> r){
+        regions = r;
+    }
+
     public void addRegion(region r){
         regions.add(r);
     }
 
     public void loseRegion(region r){
         regions.remove(r);
-    }
-
-    public void setCanReinforce(boolean c){
-        canReinforce = c;
     }
 }

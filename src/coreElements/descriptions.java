@@ -6,7 +6,7 @@ package coreElements;
 public class descriptions {
 
     public String stark(){
-        String stark = "House Stark of Winterfell is a Great House of Westeros, \n" +
+        String stark = "house Stark of Winterfell is a Great house of Westeros, \n" +
                 "ruling over the vast region known as the North\n" +
                 "in the North from their seat in Winterfell.\n\n" +
                 "Pros: \n\n" +
@@ -22,7 +22,7 @@ public class descriptions {
     }
 
     public String Lannister(){
-        String Lannister = "House Lannister of Casterly Rock is one of the \n" +
+        String Lannister = "house Lannister of Casterly Rock is one of the \n" +
                 "Great Houses of Westeros, one of its richest and \n" +
                 "most powerful families and oldest dynasties.\n\n" +
                 "Pros: \n\n" +
@@ -38,7 +38,7 @@ public class descriptions {
     }
 
     public String RBaratheon(){
-        String RBaratheon = "House Baratheon's the ancestral Baratheon stronghold\n" +
+        String RBaratheon = "house Baratheon's the ancestral Baratheon stronghold\n" +
                 "is Storm's End, but since becoming the royal house, they  \n " +
                 "have also taken possession of the old Targaryen island\n" +
                 "fortress of Dragonstone\n\n" +
@@ -54,7 +54,7 @@ public class descriptions {
     }
 
     public String Martell(){
-        String Martell = "House Martell of Sunspear is a Great House of Westeros.\n" +
+        String Martell = "house Martell of Sunspear is a Great house of Westeros.\n" +
                 "It rules the peninsula of Dorne in the far south of the \n" +
                 "continent from their castle Sunspear.\n\n" +
                 "Pros:\n\n" +
@@ -68,7 +68,7 @@ public class descriptions {
     }
 
     public String Tully(){
-        String Tully = "House Tully of Riverrun is an exiled Great House of \nWesteros." +
+        String Tully = "house Tully of Riverrun is an exiled Great house of \nWesteros." +
                 "Its most senior member carried the title of Lord \n of Riverrun and " +
                 "Lord Paramount of the Trident\n\n" +
                 "Pros:\n\n" +
@@ -82,9 +82,9 @@ public class descriptions {
     }
 
     public String Arryn(){
-        String Arryn = "House Arryn of the Eyrie is one of the Great Houses of \n Westeros." +
+        String Arryn = "house Arryn of the Eyrie is one of the Great Houses of \n Westeros." +
                 "It has ruled over the Vale of Arryn for \n millennia, The nominal head of" +
-                "House Arryn is Robin Arryn, \nthe Lord of the Eyrie,\n\n" +
+                "house Arryn is Robin Arryn, \nthe Lord of the Eyrie,\n\n" +
                 "Pros:\n" +
                 "Knights of the veil\n" +
                 "The veil is near impregnable\n" +
@@ -97,7 +97,7 @@ public class descriptions {
     }
 
     public String Tyrell(){
-        String Tyrell = "House Tyrell of Highgarden rules over the Reach, a vast,\n fertile," +
+        String Tyrell = "house Tyrell of Highgarden rules over the Reach, a vast,\n fertile," +
                 "and heavily-populated region of \nsouthwestern Westeros, from their castle-seat, \n" +
                 "Highgarden.\n\n" +
                 "Pros:\n\n" +
@@ -112,7 +112,7 @@ public class descriptions {
     }
 
     public String Greyjoy(){
-        String Greyjoy = "House Greyjoy of Pyke is one of the Great Houses\n of Westeros. It rules over" +
+        String Greyjoy = "house Greyjoy of Pyke is one of the Great Houses\n of Westeros. It rules over" +
                 " the Iron Islands,\n a harsh and bleak collection of islands off the west coast of \n" +
                 "Westeros, from the castle at Pyke.\n\n" +
                 "Pros:\n\n" +
@@ -128,8 +128,8 @@ public class descriptions {
     }
 
     public String Targaryen(){
-        String Targaryen = "House Targaryen is a Great House of Westeros and was\n" +
-                "the ruling royal House \n" +
+        String Targaryen = "house Targaryen is a Great house of Westeros and was\n" +
+                "the ruling royal house \n" +
                 "of the Seven Kingdoms for three\n" +
                 "centuries since it conquered and unified the realm, before\n" +
                 "it was deposed during Robert's Rebellion\n\n" +

@@ -1,6 +1,7 @@
 package UI;
 
 import coreElements.map;
+import gameplay.initialize;
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
@@ -13,9 +14,12 @@ import java.io.IOException;
  */
 public class uiMap extends JPanel{
     private BufferedImage map;
+    initialize iz;
+
     map Westros = new map();
 
-    public uiMap(map westros) {
+    public uiMap(map westros, String house, String players) {
+        iz = new initialize(house);
         setSize(1200,750);
         setVisible(true);
 

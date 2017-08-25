@@ -213,7 +213,7 @@ public class houseSelect extends JPanel {
             @Override
             public void actionPerformed(ActionEvent e) {
                 region = "resources/houseSelect/targregion.png";
-                houseName = "House Targaryen";
+                houseName = "house Targaryen";
                 houseDescription = ds.Targaryen();
                 confirm();
             }
@@ -288,7 +288,8 @@ public class houseSelect extends JPanel {
     }
 
     public void AIButton(){
-        String[] numbers = {"1","2","3","4","5","6","7","8","9","10"};
+        //TODO: String[] numbers = {"1","2","3","4","5","6","7","8","9","10"}; Mulitplayer not funcitonal
+        String[] numbers = {"1"};
         jb = new JComboBox<String>(numbers);
         add(jb);
         jb.setBounds(525,272,100,100);
@@ -301,8 +302,7 @@ public class houseSelect extends JPanel {
     }
 
     public void startGame() {
-
-        //game.startGame(houseSelect,jb.getSelectedItem());
+        game.startGame(houseName, (String) jb.getSelectedItem());
     }
 
     public void mainMenu(){
@@ -331,7 +331,7 @@ public class houseSelect extends JPanel {
                 g.drawImage(house, 200, 600, null);
                 g.drawImage(description, 600, 600, null);
                 g.drawImage(players, 200, 300, null);
-                g.drawString("House "+ houseName, 630, 630);
+                g.drawString("house "+ houseName, 630, 630);
                 drawString(g,houseDescription, 620, 650);
             }
         }

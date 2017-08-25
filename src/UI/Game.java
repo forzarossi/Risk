@@ -12,7 +12,7 @@ import java.awt.event.KeyListener;
  */
 public class Game extends JFrame implements KeyListener{
     map westros = new map();
-    uiMap fr = new uiMap(westros);
+    uiMap fr;
     splitPane splitPane;
     mainMenu mm;
     houseSelect HS;
@@ -46,8 +46,9 @@ public class Game extends JFrame implements KeyListener{
         repaint();
     }
 
-    public void startGame(){
+    public void startGame(String house, String players){
         remove(HS);
+        fr = new uiMap(westros,house,players);
         splitPane = new splitPane(fr);
         getContentPane().add(splitPane);
         revalidate();
