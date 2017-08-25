@@ -10,14 +10,12 @@ public class Player {
     String name;
     List<region> regions;
 
-    String color;
     boolean isAI;
 
-    public Player(String n, house h,int pn, int nor, String c, boolean a) {
+    public Player(String n, house h, int pn, int nor, boolean a) {
         name = n;
         playerNumber = pn;
         numberOfregions = nor;
-        color = c;
         isAI = a;
         house = h;
         regions = new ArrayList<region>();
@@ -41,14 +39,6 @@ public class Player {
 
     public int getReinforcements(){
         return  (numberOfregions/3) + 3;
-    }
-
-    public void setColor(String c){
-        color = c;
-    }
-
-    public String getColor(){
-        return color;
     }
 
     public void setAI(boolean A){

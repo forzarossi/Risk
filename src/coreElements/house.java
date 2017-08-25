@@ -10,12 +10,14 @@ import java.util.*;
  */
 public class house {
     String name;
+    String Color;
     Image sigil;
     String[] family;
     ArrayList<region> startingRegions;
 
-    public house(String Na, String sig, String[] fam, ArrayList<region> r){
+    public house(String Na, String c, String sig, String[] fam, ArrayList<region> r){
         name = Na;
+        Color = c;
         try {
           sigil = ImageIO.read(new File("resources/sigils/"+sig));
         }

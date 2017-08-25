@@ -1,6 +1,7 @@
 package UI;
 
 import coreElements.map;
+import coreElements.region;
 import gameplay.initialize;
 import javax.imageio.ImageIO;
 import javax.swing.*;
@@ -8,6 +9,7 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.util.Arrays;
 
 /**
  * Created by marcrossi on 8/1/17.
@@ -15,7 +17,7 @@ import java.io.IOException;
 public class uiMap extends JPanel{
     private BufferedImage map;
     initialize iz;
-
+    region r;
     map Westros = new map();
 
     public uiMap(map westros, String house, String players) {
@@ -25,13 +27,14 @@ public class uiMap extends JPanel{
 
         Westros = westros;
 
-        try {
-            map = ImageIO.read(new File("westros.jpg"));
-        } catch (IOException ex) {
-            System.out.print("westros cannot be found");
-        }
+       
+       // terrian();
         repaint();
     }
+
+//    private void terrian() {
+//
+//    }
 
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
@@ -43,6 +46,6 @@ public class uiMap extends JPanel{
             Westros.setY(-1365);
         }
 
-        g.drawImage(map,0, Westros.getY(),null);
+        g.drawImage(r.getImage(),0, 0,null);
     }
 }

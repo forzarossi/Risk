@@ -1,5 +1,7 @@
 package coreElements;
 
+import java.awt.*;
+import java.awt.image.BufferedImage;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
@@ -11,15 +13,59 @@ import java.util.Random;
 public class region {
     int unitsPresent;
     String name;
+    String Color;
+
     List<Integer> adjacent;
     boolean possession;
     int income;
+    BufferedImage image;
 
-    public region(String n, int up, List<Integer> adj, int in){
+    //TODO add bufferd images as parameter get rid of set image
+    public region(String n, int up, List<Integer> adj, int in, String c){
         name = n;
         unitsPresent = up;
         adjacent = adj;
         income = in;
+        Color = c;
+    }
+
+    public void setColor(){
+        int rgb = 0;
+        if(Color == "white"){
+            rgb = new Color(255, 255, 255).getRGB();
+        }else if(Color == "red"){
+            rgb = new Color(255, 51, 51).getRGB();
+        }else if(Color == "brown"){
+            rgb = new Color(153, 76, 0).getRGB();
+        }else if(Color == "cyan"){
+            rgb = new Color(0, 255, 255).getRGB();
+        }else if(Color == "yellow"){
+            rgb = new Color(255, 255, 102).getRGB();
+        }else if(Color == "orange"){
+            rgb = new Color(255, 153, 51).getRGB();
+        }else if(Color == "black"){
+            rgb = new Color(0, 0, 0).getRGB();
+        }else if(Color == "blue"){
+            rgb = new Color(0, 102, 255).getRGB();
+        }else if(Color == "green"){
+            rgb = new Color(0, 255, 128).getRGB();
+        }
+
+        for (int y = 0; y < image.getHeight(); y++) {
+            for (int x = 0; x < image.getWidth(); x++) {
+                if(image.getRGB(x, y) == -16777216){
+                    image.setRGB(x, y, rgb);
+                }
+            }
+        }
+    }
+
+    public void setColor(String c){
+        Color = c;
+    }
+
+    public String getColor(){
+        return Color;
     }
 
     public void setUnitsPresent(int up){
@@ -34,6 +80,15 @@ public class region {
 
     public String getName(){
         return name;
+    }
+
+    public void setImage(BufferedImage i){
+       image = i;
+       setColor();
+    }
+
+    public BufferedImage getImage(){
+        return image;
     }
 
     public boolean isAdjacent(region attacker){
