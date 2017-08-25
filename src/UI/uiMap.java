@@ -27,7 +27,7 @@ public class uiMap extends JPanel{
 
         Westros = westros;
 
-       
+
        // terrian();
         repaint();
     }

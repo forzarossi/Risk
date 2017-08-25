@@ -20,13 +20,14 @@ public class region {
     int income;
     BufferedImage image;
 
-    //TODO add bufferd images as parameter get rid of set image
-    public region(String n, int up, List<Integer> adj, int in, String c){
+    public region(String n, int up, List<Integer> adj, int in, String c, BufferedImage i){
         name = n;
         unitsPresent = up;
         adjacent = adj;
         income = in;
         Color = c;
+        image = i;
+        setColor();
     }
 
     public void setColor(){

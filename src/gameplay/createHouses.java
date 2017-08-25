@@ -2,6 +2,9 @@ package gameplay;
 
 import coreElements.house;
 import coreElements.region;
+
+import javax.imageio.ImageIO;
+import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -22,21 +25,21 @@ public class createHouses {
         ArrayList<region> sr = new ArrayList<region>();
 
         try {
-            sr.add(new region("Stoney Shore", 15, Arrays.asList(1, 2), 50, Color));
-            sr.add(new region("Bear Island", 15, Arrays.asList(1, 3), 50, Color));
-            sr.add(new region("Wolfswood", 15, Arrays.asList(1, 2, 3), 30, Color));
-            sr.add(new region("Barrowlands", 15, Arrays.asList(2, 3, 10), 30, Color));
-            sr.add(new region("Winterfell", 15, Arrays.asList(3, 4, 11), 300, Color));
-            sr.add(new region("The Gift", 15, Arrays.asList(4, 6, 7), 100, Color));
-            sr.add(new region("The Dreadfort", 15, Arrays.asList(4, 7, 8), 100, Color));
-            sr.add(new region("Skagos", 15, Arrays.asList(6), 30, Color));
-            sr.add(new region("Karnold", 15, Arrays.asList(5, 6, 7), 100, Color));
-            sr.add(new region("Widow's watch", 15, Arrays.asList(4, 8, 9), 50, Color));
-            sr.add(new region("white Harbor", 15, Arrays.asList(9, 10, 11), 200, Color));
-            sr.add(new region("The Neck", 15, Arrays.asList(10, 11), 100, Color));
-            sr.add(new region("Cape Kraken", 15, Arrays.asList(11), 100, Color));
+            sr.add(new region("Stoney Shore", 15, Arrays.asList(1, 2), 50, Color, ImageIO.read(new File("resources/regions/stoneyshore.png"))));
+            sr.add(new region("Bear Island", 15, Arrays.asList(1, 3), 50, Color, ImageIO.read(new File("resources/regions/bearisland.png"))));
+            sr.add(new region("Wolfswood", 15, Arrays.asList(1, 2, 3), 30, Color, ImageIO.read(new File("resources/regions/wolfswood.png"))));
+            sr.add(new region("Barrowlands", 15, Arrays.asList(2, 3, 10), 30, Color, ImageIO.read(new File("resources/regions/barrowlands.png"))));
+            sr.add(new region("Winterfell", 15, Arrays.asList(3, 4, 11), 300, Color, ImageIO.read(new File("resources/regions/winterfell.png"))));
+            sr.add(new region("The Gift", 15, Arrays.asList(4, 6, 7), 100, Color, ImageIO.read(new File("resources/regions/thegift.png"))));
+            sr.add(new region("The Dreadfort", 15, Arrays.asList(4, 7, 8), 100, Color, ImageIO.read(new File("resources/regions/thedreaffort.png"))));
+            sr.add(new region("Skagos", 15, Arrays.asList(6), 30, Color, ImageIO.read(new File("resources/regions/skagos.png"))));
+            sr.add(new region("Karnold", 15, Arrays.asList(5, 6, 7), 100, Color, ImageIO.read(new File("resources/regions/karnold.png"))));
+            sr.add(new region("Widow's watch", 15, Arrays.asList(4, 8, 9), 50, Color, ImageIO.read(new File("resources/regions/widowswatch.png"))));
+            sr.add(new region("white Harbor", 15, Arrays.asList(9, 10, 11), 200, Color, ImageIO.read(new File("resources/regions/whiteharbor.png"))));
+            sr.add(new region("The Neck", 15, Arrays.asList(10, 11), 100, Color, ImageIO.read(new File("resources/regions/theneck.png"))));
+            sr.add(new region("Cape Kraken", 15, Arrays.asList(11), 100, Color, ImageIO.read(new File("resources/regions/capekraken.png"))));
         }catch (Exception e){
-
+            System.out.println("Stark regions");
         }
 
         return new house(name, Color,sigil, family, sr);
@@ -49,6 +52,16 @@ public class createHouses {
         String Color = "red";
         ArrayList<region> sr = new ArrayList<region>();
 
+        try {
+            sr.add(new region("The Crag", 15, Arrays.asList(15, 19), 50,Color, ImageIO.read(new File("resources/regions/thecrag.png"))));
+            sr.add(new region("Golden Tooth", 15, Arrays.asList(19, 20), 50, Color, ImageIO.read(new File("resources/regions/goldentooth.png"))));
+            sr.add(new region("Casterly Rock", 15, Arrays.asList(19, 21), 30, Color, ImageIO.read(new File("resources/regions/casterlyrock.png"))));
+            sr.add(new region("Crackerhall", 15, Arrays.asList(21, 37), 30, Color, ImageIO.read(new File("resources/regions/crackerhill.png"))));
+            sr.add(new region("Siverhill", 15, Arrays.asList(21, 22, 37), 300, Color, ImageIO.read(new File("resources/regions/silverhill.png"))));
+        }catch (Exception e){
+            System.out.println("Lan regions");
+        }
+
         return new house(name, Color, sigil, family, sr);
     }
 
@@ -58,6 +71,13 @@ public class createHouses {
         String name = "Greyjoy";
         String Color = "brown";
         ArrayList<region> sr = new ArrayList<region>();
+
+        try {
+            sr.add(new region("Pyke", 15, Arrays.asList(15, 38), 50, Color, ImageIO.read(new File("resources/regions/pyke.png"))));
+            sr.add(new region("Harlaw", 15, Arrays.asList(12, 38), 50, Color, ImageIO.read(new File("resources/regions/harlaw.png"))));
+        }catch (Exception e){
+            System.out.println("greyjoy regions");
+        }
 
         return new house(name, Color, sigil, family, sr);
     }
@@ -69,6 +89,15 @@ public class createHouses {
         String Color = "cyan";
         ArrayList<region> sr = new ArrayList<region>();
 
+        try {
+            sr.add(new region("Mountians of the Moon", 15, Arrays.asList(13, 16, 17), 50, Color, ImageIO.read(new File("resources/regions/moon.png"))));
+            sr.add(new region("The Fingers", 15, Arrays.asList(16), 50, Color, ImageIO.read(new File("resources/regions/fingers.png"))));
+            sr.add(new region("The Eyrie", 15, Arrays.asList(17, 18), 30, Color, ImageIO.read(new File("resources/regions/eyrie.png"))));
+            sr.add(new region("Gulltown", 15, Arrays.asList(18), 30, Color, ImageIO.read(new File("resources/regions/gulltown.png"))));
+        }catch (Exception e){
+            System.out.println("Arryn regions");
+        }
+
         return new house(name, Color, sigil, family, sr);
     }
 
@@ -79,15 +108,33 @@ public class createHouses {
         String Color = "yellow";
         ArrayList<region> sr = new ArrayList<region>();
 
+        try {
+            sr.add(new region("Dornish Marches", 15, Arrays.asList(34, 28, 29), 50, Color, ImageIO.read(new File("resources/regions/dornishmarch.png"))));
+            sr.add(new region("Strom's End", 15, Arrays.asList(27, 29, 30), 50, Color, ImageIO.read(new File("resources/regions/stormsend.png"))));
+            sr.add(new region("Rainwood", 15, Arrays.asList(29, 30), 30, Color, ImageIO.read(new File("resources/regions/rainwood.png"))));
+            sr.add(new region("Tarth", 15, Arrays.asList(30), 30, Color, ImageIO.read(new File("resources/regions/tarth.png"))));
+        }catch (Exception e){
+            System.out.println("RBAR regions");
+        }
+
         return new house(name, Color, sigil, family, sr);
     }
 
     public house createMartell(){
         String sigil = "Martell.png";
-        String[] family = {"Arianne Martell", "","",""};
+        String[] family = {"Ellaria Sand","Tyana Sand","Nym Sand","Obara Sand"};
         String name = "Martell";
         String Color = "orange";
         ArrayList<region> sr = new ArrayList<region>();
+
+        try {
+            sr.add(new region("Red Mountians", 15, Arrays.asList(33, 34,35), 50,Color, ImageIO.read(new File("resources/regions/redmountians.png"))));
+            sr.add(new region("Sandstone", 15, Arrays.asList(35), 50, Color, ImageIO.read(new File("resources/regions/sandstone.png"))));
+            sr.add(new region("Greenblood", 15, Arrays.asList(35, 36), 30, Color, ImageIO.read(new File("resources/regions/greenblood.png"))));
+            sr.add(new region("Sunspear", 15, Arrays.asList(36), 30, Color, ImageIO.read(new File("resources/regions/sunspear.png"))));
+        }catch (Exception e){
+            System.out.println("Martell regions");
+        }
 
         return new house(name, Color, sigil, family, sr);
     }
@@ -99,15 +146,34 @@ public class createHouses {
         String Color = "black";
         ArrayList<region> sr = new ArrayList<region>();
 
+        try {
+            sr.add(new region("Kings Landing", 15, Arrays.asList(24, 25, 39), 50, Color, ImageIO.read(new File("resources/regions/kingslanding.png"))));
+            sr.add(new region("Crackclaw Point", 15, Arrays.asList(25,26), 50, Color, ImageIO.read(new File("resources/regions/cracklaw.png"))));
+            sr.add(new region("Kingswood", 15, Arrays.asList(26, 27, 40), 30, Color, ImageIO.read(new File("resources/regions/kingswood.png"))));
+            sr.add(new region("Dragonstone", 15, Arrays.asList(2, 3, 10), 30, Color, ImageIO.read(new File("resources/regions/dragonstone.png"))));
+        }catch (Exception e){
+            System.out.println("Targ regions");
+        }
+
         return new house(name, Color, sigil, family, sr);
     }
 
     public house createTully(){
         String sigil = "tully.png";
-        String[] family = {"Ellaria Sand","Tyana Sand","Nym Sand","Obara Sand"};
+        String[] family = {"","","",""};
         String name = "Tully";
         String Color = "blue";
         ArrayList<region> sr = new ArrayList<region>();
+
+        try {
+            sr.add(new region("The Twins", 15, Arrays.asList(12, 13), 50, Color, ImageIO.read(new File("resources/regions/twins.png"))));
+            sr.add(new region("The Trident", 15, Arrays.asList(13, 14), 50, Color, ImageIO.read(new File("resources/regions/trident.png"))));
+            sr.add(new region("Riverrun", 15, Arrays.asList(14, 15, 41), 30, Color, ImageIO.read(new File("resources/regions/riverrun.png"))));
+            sr.add(new region("Stoney Sept", 15, Arrays.asList(20, 22, 41), 30, Color, ImageIO.read(new File("resources/regions/stoneysept.png"))));
+            sr.add(new region("Harrenhal", 15, Arrays.asList(3, 4, 11, 41), 300, Color, ImageIO.read(new File("resources/regions/harrenhal.png"))));
+        }catch (Exception e){
+            System.out.println("Tully regions");
+        }
 
         return new house(name, Color, sigil, family, sr);
     }
@@ -118,6 +184,18 @@ public class createHouses {
         String name = "Tyrell";
         String Color = "green";
         ArrayList<region> sr = new ArrayList<region>();
+
+        try {
+            sr.add(new region("Highgarden", 15, Arrays.asList(23, 31, 33, 28), 50, Color, ImageIO.read(new File("resources/regions/highgarden.png"))));
+            sr.add(new region("The Mander", 15, Arrays.asList(24, 28), 50, Color, ImageIO.read(new File("resources/regions/themander.png"))));
+            sr.add(new region("Blackwater Rush", 15, Arrays.asList( 22, 23, 24), 30, Color, ImageIO.read(new File("resources/regions/blackwater.png"))));
+            sr.add(new region("Searoad Marches", 15, Arrays.asList(23, 37), 30, Color, ImageIO.read(new File("resources/regions/searoadmarch.png"))));
+            sr.add(new region("Oldtown", 15, Arrays.asList(31, 32), 300, Color, ImageIO.read(new File("resources/regions/oldtown.png"))));
+            sr.add(new region("Three Towers", 15, Arrays.asList(31,32, 33), 300, Color, ImageIO.read(new File("resources/regions/threetowers.png"))));
+            sr.add(new region("The Arbor", 15, Arrays.asList(32), 300, Color, ImageIO.read(new File("resources/regions/arbor.png"))));
+        }catch (Exception e){
+           System.out.println("Tyrell regions");
+        }
 
         return new house(name, Color, sigil, family, sr);
     }
