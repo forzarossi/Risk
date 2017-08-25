@@ -1,5 +1,6 @@
 package gameplay;
 
+import UI.uiMap;
 import coreElements.AI;
 import coreElements.Player;
 import coreElements.region;
@@ -12,13 +13,18 @@ import java.util.Arrays;
  * Created by marcrossi on 8/24/17.
  */
 public class initialize {
+    uiMap map;
     createHouses ch;
     Player user;
     AI[] ai;
     ArrayList<String> houses;
 
-    public initialize(String h){
+    public initialize(uiMap m, String h){
+        map = m;
         houses = new ArrayList<String>();
+        ch = new createHouses();
+        ai = new AI[8];
+
         houses.add("Stark");
         houses.add("Lannister");
         houses.add("Greyjoy");
@@ -28,9 +34,6 @@ public class initialize {
         houses.add("Targ");
         houses.add("Tully");
         houses.add("Tyrell");
-
-        ch = new createHouses();
-        ai = new AI[8];
 
         houses.remove(h);
 
@@ -92,6 +95,6 @@ public class initialize {
     }
 
     public void load(){
-
+        map.createMap(user, ai);
     }
 }

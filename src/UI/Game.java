@@ -75,7 +75,6 @@ public class Game extends JFrame implements KeyListener{
                 fr.repaint();
             }
         }
-
     }
 
     public void keyReleased(KeyEvent e) {

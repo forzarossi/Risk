@@ -1,5 +1,7 @@
 package UI;
 
+import coreElements.AI;
+import coreElements.Player;
 import coreElements.map;
 import coreElements.region;
 import gameplay.initialize;
@@ -21,20 +23,19 @@ public class uiMap extends JPanel{
     map Westros = new map();
 
     public uiMap(map westros, String house, String players) {
-        iz = new initialize(house);
+        iz = new initialize(this, house);
         setSize(1200,750);
         setVisible(true);
 
         Westros = westros;
 
-
        // terrian();
         repaint();
     }
 
-//    private void terrian() {
-//
-//    }
+    public void createMap(Player user, AI[] ai) {
+
+    }
 
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);

@@ -10,8 +10,6 @@ public class Player {
     String name;
     List<region> regions;
 
-
-
     public Player(String n, house h, int pn, int nor) {
         name = n;
         playerNumber = pn;
