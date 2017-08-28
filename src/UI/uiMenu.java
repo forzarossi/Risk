@@ -10,7 +10,6 @@ public class uiMenu extends JPanel {
 
     public uiMenu(){
         setVisible(true);
-        setBackground(Color.red);
         setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 
         repaint();

@@ -19,14 +19,19 @@ public class region {
     boolean possession;
     int income;
     BufferedImage image;
+    int x;
+    int y;
 
-    public region(String n, int up, List<Integer> adj, int in, String c, BufferedImage i){
+    public region(String n, int up, List<Integer> adj, int in, String c, BufferedImage i, int x , int y){
         name = n;
         unitsPresent = up;
         adjacent = adj;
         income = in;
         Color = c;
         image = i;
+        this.x = x;
+        this.y = y;
+
         setColor();
     }
 
@@ -54,11 +59,19 @@ public class region {
 
         for (int y = 0; y < image.getHeight(); y++) {
             for (int x = 0; x < image.getWidth(); x++) {
-                if(image.getRGB(x, y) == -16777216){
+                if(image.getRGB(x, y) == -16776961){
                     image.setRGB(x, y, rgb);
                 }
             }
         }
+    }
+
+    public int getX(){
+        return x;
+    }
+
+    public int getY(){
+        return y;
     }
 
     public void setColor(String c){

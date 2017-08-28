@@ -15,7 +15,11 @@ public class Player {
         playerNumber = pn;
         numberOfregions = nor;
         house = h;
-        regions = new ArrayList<region>();
+        regions = house.getStartingRegions();
+    }
+
+    public house getHouse(){
+        return house;
     }
 
     public void setPlayerNumber(int pn){
@@ -48,5 +52,9 @@ public class Player {
 
     public void loseRegion(region r){
         regions.remove(r);
+    }
+
+    public List<region> getRegions() {
+        return regions;
     }
 }

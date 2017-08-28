@@ -11,6 +11,7 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 
 /**
@@ -19,34 +20,46 @@ import java.util.Arrays;
 public class uiMap extends JPanel{
     private BufferedImage map;
     initialize iz;
-    region r;
     map Westros = new map();
-
+    ArrayList<region> regions;
+    Image w;
     public uiMap(map westros, String house, String players) {
         iz = new initialize(this, house);
-        setSize(1200,750);
-        setVisible(true);
-
+        regions = iz.getAllRegions();
         Westros = westros;
+        try {
+             w = ImageIO.read(new File("resources/regions/westros.png"));
+        }catch(Exception e){
 
+        }
        // terrian();
         repaint();
     }
 
     public void createMap(Player user, AI[] ai) {
-
+        repaint();
     }
+
 
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
-        if(Westros.getY() >= 0){
-            Westros.setY(0);
-        }
+       // g.drawImage(w,0,0,null);
+           for(region k: regions){
 
-        if(Westros.getY() < -1365){
-            Westros.setY(-1365);
-        }
+            g.drawImage(k.getImage(),k.getX(),k.getY(),null);
+          }
 
-        g.drawImage(r.getImage(),0, 0,null);
+
+
+
+//        if(Westros.getY() >= 0){
+//            Westros.setY(0);
+//        }
+//
+//        if(Westros.getY() < -1365){
+//            Westros.setY(-1365);
+//        }
+//
+//        g.drawImage(r.getImage(),0, 0,null);
     }
 }

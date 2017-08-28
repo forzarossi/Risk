@@ -24,6 +24,7 @@ public class house {
         catch (Exception e){
             System.out.println("Sigil could not be found");
         }
+
         family = fam;
         startingRegions = r;
     }
@@ -42,5 +43,9 @@ public class house {
 
     public void setFamily(String[] fam){
         family = fam;
+    }
+
+    public ArrayList<region> getStartingRegions(){
+        return startingRegions;
     }
 }
