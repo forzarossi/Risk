@@ -9,13 +9,31 @@ public class Player {
     house house;
     String name;
     List<region> regions;
+    int money;
 
-    public Player(String n, house h, int pn, int nor) {
+    public Player(String n, house h, int pn, int nor, int m) {
         name = n;
         playerNumber = pn;
         numberOfregions = nor;
         house = h;
         regions = house.getStartingRegions();
+        money = m;
+    }
+
+    public int getMoney(){
+        return money;
+    }
+
+    public void setMoney(int m){
+        money = m;
+    }
+
+    public void addMoney(int m){
+        money += m;
+    }
+
+    public void loseMoney(int m){
+        money -= m;
     }
 
     public house getHouse(){

@@ -28,7 +28,6 @@ public class houseSelect extends JPanel {
     boolean selectingHouse;
     boolean selected;
 
-    String NumberPlayers;
     String houseName;
     String houseDescription;
     String region;

@@ -2,6 +2,7 @@ package coreElements;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
+import java.awt.image.BufferedImage;
 import java.io.File;
 import java.util.*;
 
@@ -11,7 +12,7 @@ import java.util.*;
 public class house {
     String name;
     String Color;
-    Image sigil;
+    BufferedImage sigil;
     String[] family;
     ArrayList<region> startingRegions;
 

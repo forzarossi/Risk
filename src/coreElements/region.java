@@ -1,6 +1,9 @@
 package coreElements;
 
+import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.util.Arrays;
 import java.util.Collections;
@@ -10,7 +13,7 @@ import java.util.Random;
 /**
  * Created by marcrossi on 8/14/17.
  */
-public class region {
+public class region extends JButton implements ActionListener{
     int unitsPresent;
     String name;
     String Color;
@@ -22,7 +25,7 @@ public class region {
     int x;
     int y;
 
-    public region(String n, int up, List<Integer> adj, int in, String c, BufferedImage i, int x , int y){
+    public region(String n, int up, List<Integer> adj, int in, String c, BufferedImage i, int x , int y) {
         name = n;
         unitsPresent = up;
         adjacent = adj;
@@ -33,6 +36,11 @@ public class region {
         this.y = y;
 
         setColor();
+        setLocation(x, y);
+        setSize(image.getWidth(),image.getHeight());
+        setBorderPainted(false);
+        //setDisabledIcon(new ImageIcon(getImage()));
+        setIcon(new ImageIcon(getImage()));
     }
 
     public void setColor(){
@@ -70,8 +78,18 @@ public class region {
         return x;
     }
 
+    public void setX(int x1){
+        setLocation(x1, y);
+        x = x1;
+    }
+
     public int getY(){
         return y;
+    }
+
+    public void setY(int y1){
+        setLocation(x, y1);
+        y = y1;
     }
 
     public void setColor(String c){
@@ -94,6 +112,14 @@ public class region {
 
     public String getName(){
         return name;
+    }
+
+    public void Clickable(){
+        setEnabled(true);
+    }
+
+    public void notClickable(){
+        setEnabled(false);
     }
 
     public void setImage(BufferedImage i){
@@ -213,5 +239,10 @@ public class region {
 
     public void transferUnits(){
         //prompt user for number of unit to move into this new territory
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+
     }
 }

@@ -38,7 +38,7 @@ public class createHouses {
             sr.add(new region("Karnold", 15, Arrays.asList(5, 6, 7), 100, Color, ImageIO.read(new File("resources/regions/karnold.png")),382,91));
             sr.add(new region("Widow's watch", 15, Arrays.asList(4, 8, 9), 50, Color, ImageIO.read(new File("resources/regions/widowswatch.png")),356,222));
             sr.add(new region("white Harbor", 15, Arrays.asList(9, 10, 11), 200, Color, ImageIO.read(new File("resources/regions/whiteharbor.png")), 272,294));
-            sr.add(new region("The Neck", 15, Arrays.asList(10, 11), 100, Color, ImageIO.read(new File("resources/regions/theneck.png")),153,375));
+            sr.add(new region("The Neck", 15, Arrays.asList(10, 11, 12), 100, Color, ImageIO.read(new File("resources/regions/theneck.png")),153,375));
             sr.add(new region("Cape Kraken", 15, Arrays.asList(11), 100, Color, ImageIO.read(new File("resources/regions/capekraken.png")),10 ,390));
         }catch (Exception e){
             System.out.println("Stark regions");
@@ -94,10 +94,11 @@ public class createHouses {
         ArrayList<region> sr = new ArrayList<region>();
 
         try {
-            sr.add(new region("Mountians of the Moon", 15, Arrays.asList(13, 16, 17), 50, Color, ImageIO.read(new File("resources/regions/moon.png")),271,457));
             sr.add(new region("The Fingers", 15, Arrays.asList(16), 50, Color, ImageIO.read(new File("resources/regions/fingers.png")),344,433));
-            sr.add(new region("The Eyrie", 15, Arrays.asList(17, 18), 30, Color, ImageIO.read(new File("resources/regions/eyrie.png")),389,482));
+            sr.add(new region("Mountians of the Moon", 15, Arrays.asList(13, 16, 17), 50, Color, ImageIO.read(new File("resources/regions/moon.png")),271,457));
             sr.add(new region("Gulltown", 15, Arrays.asList(18), 30, Color, ImageIO.read(new File("resources/regions/gulltown.png")),456,565));
+            sr.add(new region("The Eyrie", 15, Arrays.asList(17, 18), 30, Color, ImageIO.read(new File("resources/regions/eyrie.png")),389,482));
+
         }catch (Exception e) {
             System.out.println("Arryn regions");
         }
@@ -175,7 +176,7 @@ public class createHouses {
             sr.add(new region("The Trident", 15, Arrays.asList(13, 14), 50, Color, ImageIO.read(new File("resources/regions/trident.png")),224,521));
             sr.add(new region("Riverrun", 15, Arrays.asList(14, 15, 41), 30, Color, ImageIO.read(new File("resources/regions/riverrun.png")),182,568));
             sr.add(new region("Stoney Sept", 15, Arrays.asList(20, 22, 41), 30, Color, ImageIO.read(new File("resources/regions/stoneysept.png")),188,657));
-            sr.add(new region("Harrenhal", 15, Arrays.asList(3, 4, 11, 41), 300, Color, ImageIO.read(new File("resources/regions/harrenhal.png")),266,613));
+            sr.add(new region("Harrenhal", 15, Arrays.asList(14,39, 41), 300, Color, ImageIO.read(new File("resources/regions/harrenhal.png")),266,613));
         }catch (Exception e){
             System.out.println("Tully regions");
         }
