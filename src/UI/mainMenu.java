@@ -14,13 +14,12 @@ public class mainMenu extends JPanel{
     public Game game;
     Image background;
     Image title;
+    Image plusplus;
 
     public mainMenu(Game gm) {
         game = gm;
         setVisible(true);
         createMenu();
-
-        //setLayout(new BoxLayout(this,BoxLayout.X_AXIS));
         revalidate();
         repaint();
     }
@@ -58,15 +57,15 @@ public class mainMenu extends JPanel{
         quit.setBorderPainted(false);
         quit.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-
+                System.exit(0);
             }
         });
         add(start);
         add(settings);
         add(quit);
         start.setBounds(40,200,500,120);
-        settings.setBounds(40,260,500,120);
-        quit.setBounds(40,320,500,120);
+        settings.setBounds(30,280,500,90);
+        quit.setBounds(30,340,500,90);
     }
 
     @Override
@@ -75,11 +74,13 @@ public class mainMenu extends JPanel{
         try {
             background = ImageIO.read(new File("resources/backgrounds/background4.jpg"));
             title = ImageIO.read(new File("resources/mainMenu/title.png"));
+            plusplus = ImageIO.read(new File("resources/mainMenu/++.png"));
         } catch (Exception e) {
             System.out.println(e);
         }
 
         g.drawImage(background, 0, 0, null);
         g.drawImage(title, 10,0, null);
+        //g.drawImage(plusplus,600,150,null);
     }
 }

@@ -24,12 +24,13 @@ public class splitPane extends JSplitPane {
         if(h == "Stark"){
             user = new Player("Stark", ch.createStark(), 1,13, 1000);
         }
-//        else if(h == "Lannister"){
-//            user = new Player("Lannister", ch.createLannister(), 1,5 );
+        else if(h == "Lannister"){
+            user = new Player("Lannister", ch.createLannister(), 1,5 ,1000);
+        }
         else if(h == "Greyjoy"){
            user = new Player("Greyjoy", ch.createGreyjoy(), 1,5,1000);
         }
-         else if(h == "Arryn") {
+        else if(h == "Arryn") {
             user = new Player("Arryn", ch.createArryn(), 1, 5,1000);
         }
 //        }else if(h == "Baratheon"){
@@ -39,22 +40,21 @@ public class splitPane extends JSplitPane {
 //        }else if(h == "Targ"){
 //            user = new Player("Targ", ch.createTrag(), 1,5);
         else if(h == "Tully"){
-        user = new Player("Tully", ch.createTully(), 1,5,1000);
+            user = new Player("Tully", ch.createTully(), 1,5,1000);
         }
 //       else if(h == "Tyrell") {
 //            user = new Player("Tyrell", ch.createTyrell(), 1,5);
 //        }
-
-        UIMAP = new uiMap(user);
         UIMENU = new uiMenu(user);
+        UIMAP = new uiMap(user);
 
-        setVisible(true);
         setOrientation(JSplitPane.VERTICAL_SPLIT);
         setDividerLocation(750);
         setEnabled(false);
 
-        setTopComponent(UIMAP);
         setBottomComponent(UIMENU);
+        setTopComponent(UIMAP);
+
         repaint();
     }
 

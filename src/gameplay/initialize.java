@@ -44,16 +44,18 @@ public class initialize {
         if(houses.contains("Stark")){
              ai[i] = new AI("Stark", ch.createStark(), 1,13,1000);
              i++;
-        }//else if(houses.contains("Lannister")){
-//            ai[i] = new AI("Lannister", ch.createLannister(), 1,13);
-//            i++;
+        }
+        if(houses.contains("Lannister")) {
+            ai[i] = new AI("Lannister", ch.createLannister(), 1, 13, 1000);
+            i++;
+        }
         if(houses.contains("Greyjoy")){
             ai[i] = new AI("Greyjoy", ch.createGreyjoy(), 1,13,1000);
             i++;
         }
         if(houses.contains("Arryn")){
            ai[i] = new AI("Arryn", ch.createArryn(), 1,13,1000);
-//            i++;
+            i++;
         }
 // else if(houses.contains("Baratheon")){
 //            ai[i] = new AI("Baratheon", ch.createBaratheon(), 1,13);

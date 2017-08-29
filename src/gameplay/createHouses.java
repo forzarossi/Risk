@@ -47,27 +47,27 @@ public class createHouses {
         allRegions.addAll(sr);
         return new house(name, Color,sigil, family, sr);
     }
-//
-//    public house createLannister(){
-//        String sigil = "lan.png";
-//        String[] family = {"Jamie Lannister, Cerci Lannister, Gregor Clegane, Sandor Clegane"};
-//        String name = "Lannister";
-//        String Color = "red";
-//        ArrayList<region> sr = new ArrayList<region>();
-//
-//        try {
-//            sr.add(new region("The Crag", 15, Arrays.asList(15, 19), 50,Color, ImageIO.read(new File("resources/regions/thecrag.png"))));
-//            sr.add(new region("Golden Tooth", 15, Arrays.asList(19, 20), 50, Color, ImageIO.read(new File("resources/regions/goldentooth.png"))));
-//            sr.add(new region("Casterly Rock", 15, Arrays.asList(19, 21), 30, Color, ImageIO.read(new File("resourcegrs/regions/casterlyrock.png"))));
-//            sr.add(new region("Crackerhall", 15, Arrays.asList(21, 37), 30, Color, ImageIO.read(new File("resources/regions/crackerhill.png"))));
-//            sr.add(new region("Siverhill", 15, Arrays.asList(21, 22, 37), 300, Color, ImageIO.read(new File("resources/regions/silverhill.png"))));
-//        }catch (Exception e){
-//            System.out.println("Lan regions");
-//        }
-//
-//        return new house(name, Color, sigil, family, sr);
-//    }
-//
+
+    public house createLannister(){
+        String sigil = "lan.png";
+        String[] family = {"Jamie Lannister, Cerci Lannister, Gregor Clegane, Sandor Clegane"};
+        String name = "Lannister";
+        String Color = "red";
+        ArrayList<region> sr = new ArrayList<region>();
+
+        try {
+            sr.add(new region("The Crag", 15, Arrays.asList(15, 19), 50,Color, ImageIO.read(new File("resources/regions/thecrag.png")),85,580));
+            sr.add(new region("Golden Tooth", 15, Arrays.asList(19, 20), 50, Color, ImageIO.read(new File("resources/regions/goldentooth.png")),119,620));
+            sr.add(new region("Casterly Rock", 15, Arrays.asList(19, 21), 30, Color, ImageIO.read(new File("resources/regions/casterlyrock.png")),18,659));
+            sr.add(new region("Crackerhall", 15, Arrays.asList(21, 37), 30, Color, ImageIO.read(new File("resources/regions/crackerhill.png")),39,715));
+            sr.add(new region("Siverhill", 15, Arrays.asList(21, 22, 37), 300, Color, ImageIO.read(new File("resources/regions/silverhill.png")),115,713));
+        }catch (Exception e){
+            System.out.println("Lan regions");
+        }
+        allRegions.addAll(sr);
+        return new house(name, Color, sigil, family, sr);
+    }
+
     public house createGreyjoy(){
         String sigil = "greyjoy.png";
         String[] family = {"Euron Greyjoy","Theon Greyjoy","Asha Greyjoy","Balon Greyjoy"};
