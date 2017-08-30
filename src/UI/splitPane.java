@@ -41,7 +41,7 @@ public class splitPane extends JSplitPane {
             user = new Player("Martell", ch.createMartell(), 1,5,1000);
         }
         else if(h == "Targ") {
-            user = new Player("Targ", ch.createTrag(), 1, 5, 1000);
+            user = new Player("Targ", ch.createTarg(), 1, 5, 1000);
         }
         else if(h == "Tully"){
             user = new Player("Tully", ch.createTully(), 1,5,1000);

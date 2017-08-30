@@ -5,6 +5,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
+import java.nio.Buffer;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
@@ -22,6 +23,7 @@ public class region extends JButton implements ActionListener{
     boolean possession;
     int income;
     BufferedImage image;
+    BufferedImage sigil;
     int x;
     int y;
 
@@ -37,7 +39,7 @@ public class region extends JButton implements ActionListener{
 
         setColor();
         setLocation(x, y);
-        setSize(image.getWidth(),image.getHeight());
+        setSize(image.getWidth(), image.getHeight());
         setBorderPainted(false);
         setDisabledIcon(new ImageIcon(getImage())); //TODO disable?
         setSelectedIcon(new ImageIcon(getImage()));
@@ -77,6 +79,10 @@ public class region extends JButton implements ActionListener{
         }
     }
 
+    public void addSigil(BufferedImage k) {
+        sigil = k;
+
+    }
 
     public int getX(){
         return x;
@@ -106,13 +112,7 @@ public class region extends JButton implements ActionListener{
 
     public void setUnitsPresent(int up){
         unitsPresent = up;
-    }
-
-    public int getUnitsPresent(){ return unitsPresent; }
-
-    public void setAdjacent(Integer an){
-        adjacent.add(an);
-    }
+    }public int getUnitsPresent(){ return unitsPresent; }
 
     public String getName(){
         return name;
@@ -127,8 +127,11 @@ public class region extends JButton implements ActionListener{
     }
 
     public void setImage(BufferedImage i){
-       image = i;
-       setColor();
+        image = i;
+        setDisabledIcon(new ImageIcon(getImage())); //TODO disable?
+        setSelectedIcon(new ImageIcon(getImage()));
+        setIcon(new ImageIcon(getImage()));
+        setColor();
     }
 
     public BufferedImage getImage(){

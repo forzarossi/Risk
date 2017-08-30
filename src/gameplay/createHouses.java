@@ -166,9 +166,9 @@ public class createHouses {
         return new house(name, Color, sigil, family, capital, sr);
     }
 
-    public house createTrag(){
+    public house createTarg(){
         String sigil = "targ.png";
-        String[] family = {"","","",""};
+        String[] family = {"Daenerys Targaryen","Tyrion Lannister","Grey Worm","Sir Jorah"};
         String name = "Targ";
         String Color = "black";
         ArrayList<region> sr = new ArrayList<region>();
@@ -191,7 +191,7 @@ public class createHouses {
 
     public house createTully(){
         String sigil = "tully.png";
-        String[] family = {"","","",""};
+        String[] family = {"The Blackfish","Edmure Tully","Walder Frey","Lothar Frey"};
         String name = "Tully";
         String Color = "blue";
         ArrayList<region> sr = new ArrayList<region>();
@@ -227,10 +227,10 @@ public class createHouses {
             sr.add(capital);
             sr.add(new region("The Mander", 15, Arrays.asList(24, 28), 50, Color, ImageIO.read(new File("resources/regions/themander.png")),198,774));
             sr.add(new region("Blackwater Rush", 15, Arrays.asList( 22, 23, 24), 30, Color, ImageIO.read(new File("resources/regions/blackwater.png")),177, 694));
-            sr.add(new region("Searoad Marches", 15, Arrays.asList(23, 37), 30, Color, ImageIO.read(new File("resources/regions/searoadmarch.png")),50,755));
+            sr.add(new region("Searoad Marches", 15, Arrays.asList(23, 37), 30, Color, ImageIO.read(new File("resources/regions/searoadmarch.png")),51,755));
             sr.add(new region("Oldtown", 15, Arrays.asList(31, 32), 300, Color, ImageIO.read(new File("resources/regions/oldtown.png")),15,890));
-            sr.add(new region("Three Towers", 15, Arrays.asList(31,32, 33), 300, Color, ImageIO.read(new File("resources/regions/threetowers.png")),44,955));
             sr.add(new region("The Arbor", 15, Arrays.asList(32), 300, Color, ImageIO.read(new File("resources/regions/arbor.png")),0 , 1051));
+            sr.add(new region("Three Towers", 15, Arrays.asList(31,32, 33), 300, Color, ImageIO.read(new File("resources/regions/threetowers.png")),44,955));
         }catch (Exception e){
            System.out.println("Tyrell regions");
         }

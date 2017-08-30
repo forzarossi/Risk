@@ -216,7 +216,7 @@ public class houseSelect extends JPanel {
             @Override
             public void actionPerformed(ActionEvent e) {
                 region = "resources/houseSelect/targregion.png";
-                houseName = "house Targaryen";
+                houseName = "Targ";
                 houseDescription = ds.Targaryen();
                 confirm();
             }
@@ -337,7 +337,7 @@ public class houseSelect extends JPanel {
                 g.drawImage(house, 200, 600, null);
                 g.drawImage(description, 600, 600, null);
                 g.drawImage(players, 200, 300, null);
-                g.drawString("house "+ houseName, 630, 630);
+                g.drawString("House "+ houseName, 630, 630);
                 drawString(g,houseDescription, 620, 650);
             }
         }

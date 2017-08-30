@@ -41,7 +41,7 @@ public class house {
         return name;
     }
 
-    public Image getSigil(){
+    public BufferedImage getSigil(){
         return sigil;
     }
 

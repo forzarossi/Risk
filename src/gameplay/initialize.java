@@ -67,7 +67,7 @@ public class initialize {
             i++;
         }
         if(houses.contains("Targ")){
-            ai[i] = new AI("Targ", ch.createTrag(), 1,13,1000);
+            ai[i] = new AI("Targ", ch.createTarg(), 1,13,1000);
             i++;
         }
         if(houses.contains("Tully")) {
@@ -78,6 +78,10 @@ public class initialize {
             ai[i] = new AI("Tyrell", ch.createTyrell(), 1,13, 1000);
             i++;
         }
+    }
+
+    public Player[] getAi(){
+        return  ai;
     }
 
     public ArrayList<region> getAllRegions(){
