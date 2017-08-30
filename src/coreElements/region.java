@@ -39,7 +39,7 @@ public class region extends JButton implements ActionListener{
         setLocation(x, y);
         setSize(image.getWidth(),image.getHeight());
         setBorderPainted(false);
-        //setDisabledIcon(new ImageIcon(getImage()));
+        setDisabledIcon(new ImageIcon(getImage())); //TODO disable?
         setSelectedIcon(new ImageIcon(getImage()));
         setIcon(new ImageIcon(getImage()));
     }

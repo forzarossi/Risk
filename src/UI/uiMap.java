@@ -25,7 +25,6 @@ public class uiMap extends JPanel implements KeyListener {
     region selected;
     Image w;
     Player user;
-    private Painter painter;
     public int acceleration = 2;
     BufferedImage background;
     boolean list = false;
@@ -33,6 +32,7 @@ public class uiMap extends JPanel implements KeyListener {
 
     public uiMap(Player house) {
         user = house;
+        System.out.println(user.getHouse().getName());
         iz = new initialize(this, house);
         regions = iz.getAllRegions();
         target = user.getRegions().get(0);
@@ -55,13 +55,20 @@ public class uiMap extends JPanel implements KeyListener {
 
         getInputMap().put(KeyStroke.getKeyStroke("S"), "doSomething");
         getActionMap().put("doSomething", doNothing);
-
         //TODO to here^^^
 
         requestFocusInWindow();
         addKeyListener(this);
         setLayout(null);
+        center();
         repaint();
+    }
+
+    private void center() {
+        for(region k: regions) {
+            k.setX(k.getX() + 300);
+            k.setY(k.getY() - (user.getHouse().getCapital().getY() - 200));
+        }
     }
 
     public void createMap(Player user, AI[] ai) {
@@ -77,7 +84,6 @@ public class uiMap extends JPanel implements KeyListener {
             }
         }
 
-        g.drawImage(w,0,y,null);
         for(region k: regions){
             for (region r: user.getRegions()) {
                 if(r.getName() == k.getName() || k.isAdjacent(selected)){
@@ -102,6 +108,7 @@ public class uiMap extends JPanel implements KeyListener {
                     repaint();
                 }
             });
+
             add(k);
             list = false;
         }
@@ -135,6 +142,7 @@ public class uiMap extends JPanel implements KeyListener {
         if (key == KeyEvent.VK_UP || key == KeyEvent.VK_W) {
             //if(regions..getY() <= 0) {
                 acceleration('y', '+');
+            y+=30;
                 repaint();
             //}
         }

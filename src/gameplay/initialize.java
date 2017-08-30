@@ -23,7 +23,8 @@ public class initialize {
         map = m;
         houses = new ArrayList<String>();
         ch = new createHouses();
-        ai = new AI[8];
+        ai = new AI[9];
+
         houses.add("Stark");
         houses.add("Lannister");
         houses.add("Greyjoy");
@@ -61,22 +62,22 @@ public class initialize {
             ai[i] = new AI("Baratheon", ch.createBaratheon(), 1,13,1000);
             i++;
         }
-      //if(houses.contains("Martell")){
-//            ai[i] = new AI("Martell", ch.createMartell(), 1,13);
-//            i++;
-//        }
-//      if(houses.contains("Targ")){
-//            ai[i] = new AI("Targ", ch.createTrag(), 1,13);
-//            i++;
-        //}
+        if(houses.contains("Martell")){
+            ai[i] = new AI("Martell", ch.createMartell(), 1,13, 1000);
+            i++;
+        }
+        if(houses.contains("Targ")){
+            ai[i] = new AI("Targ", ch.createTrag(), 1,13,1000);
+            i++;
+        }
         if(houses.contains("Tully")) {
             ai[i] = new AI("Tully", ch.createTully(), 1, 13,1000);
             i++;
         }
-// if(houses.contains("Tyrell")) {
-//            ai[i] = new AI("Tyrell", ch.createTyrell(), 1,13);
-//            i++;
-//        }
+        if(houses.contains("Tyrell")) {
+            ai[i] = new AI("Tyrell", ch.createTyrell(), 1,13, 1000);
+            i++;
+        }
     }
 
     public ArrayList<region> getAllRegions(){

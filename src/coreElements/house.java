@@ -14,13 +14,16 @@ public class house {
     String Color;
     BufferedImage sigil;
     String[] family;
+    region capital;
     ArrayList<region> startingRegions;
 
-    public house(String Na, String c, String sig, String[] fam, ArrayList<region> r){
+    public house(String Na, String c, String sig, String[] fam, region cap, ArrayList<region> r){
         name = Na;
         Color = c;
+        capital = cap;
+
         try {
-          sigil = ImageIO.read(new File("resources/sigils/"+sig));
+            sigil = ImageIO.read(new File("resources/sigils/"+sig));
         }
         catch (Exception e){
             System.out.println("Sigil could not be found");
@@ -28,6 +31,10 @@ public class house {
 
         family = fam;
         startingRegions = r;
+    }
+
+    public region getCapital(){
+        return capital;
     }
 
     public String getName(){

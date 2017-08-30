@@ -21,6 +21,7 @@ public class splitPane extends JSplitPane {
 
     public splitPane(String h){
         ch = new createHouses();
+
         if(h == "Stark"){
             user = new Player("Stark", ch.createStark(), 1,13, 1000);
         }
@@ -33,18 +34,22 @@ public class splitPane extends JSplitPane {
         else if(h == "Arryn") {
             user = new Player("Arryn", ch.createArryn(), 1, 5,1000);
         }
-//        }else if(h == "Baratheon"){
-//            user = new Player("Baratheon", ch.createBaratheon(), 1,5);
-//        }else if(h == "Martell"){
-//            user = new Player("Martell", ch.createMartell(), 1,5);
-//        }else if(h == "Targ"){
-//            user = new Player("Targ", ch.createTrag(), 1,5);
+        else if(h == "Baratheon"){
+            user = new Player("Baratheon", ch.createBaratheon(), 1,5,1000);
+        }
+        else if(h == "Martell"){
+            user = new Player("Martell", ch.createMartell(), 1,5,1000);
+        }
+        else if(h == "Targ") {
+            user = new Player("Targ", ch.createTrag(), 1, 5, 1000);
+        }
         else if(h == "Tully"){
             user = new Player("Tully", ch.createTully(), 1,5,1000);
         }
-//       else if(h == "Tyrell") {
-//            user = new Player("Tyrell", ch.createTyrell(), 1,5);
-//        }
+        else if(h == "Tyrell") {
+            user = new Player("Tyrell", ch.createTyrell(), 1,5, 1000);
+        }
+
         UIMENU = new uiMenu(user);
         UIMAP = new uiMap(user);
 
