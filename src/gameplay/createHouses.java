@@ -96,7 +96,7 @@ public class createHouses {
         try {
             sr.add(new region("The Fingers", 15, Arrays.asList(16), 50, Color, ImageIO.read(new File("resources/regions/fingers.png")),344,433));
             sr.add(new region("Mountians of the Moon", 15, Arrays.asList(13, 16, 17), 50, Color, ImageIO.read(new File("resources/regions/moon.png")),271,457));
-            sr.add(new region("Gulltown", 15, Arrays.asList(18), 30, Color, ImageIO.read(new File("resources/regions/gulltown.png")),456,565));
+            sr.add(new region("Gulltown", 15, Arrays.asList(18), 30, Color, ImageIO.read(new File("resources/regions/gulltown.png")),456,564));
             sr.add(new region("The Eyrie", 15, Arrays.asList(17, 18), 30, Color, ImageIO.read(new File("resources/regions/eyrie.png")),389,482));
 
         }catch (Exception e) {
@@ -107,24 +107,25 @@ public class createHouses {
         return new house(name, Color, sigil, family, sr);
     }
 
-//    public house createBaratheon(){
-//        String sigil = "RBar.png";
-//        String[] family = {"Stannis Baratheon","Renly Baratheon", "Davos Seaworth", "Red Woman"};
-//        String name = "Baratheon";
-//        String Color = "yellow";
-//        ArrayList<region> sr = new ArrayList<region>();
-//
-//        try {
-//            sr.add(new region("Dornish Marches", 15, Arrays.asList(34, 28, 29), 50, Color, ImageIO.read(new File("resources/regions/dornishmarch.png"))));
+    public house createBaratheon(){
+        String sigil = "RBar.png";
+        String[] family = {"Stannis Baratheon","Renly Baratheon", "Davos Seaworth", "Red Woman"};
+        String name = "Baratheon";
+        String Color = "yellow";
+        ArrayList<region> sr = new ArrayList<region>();
+
+        try {
+            sr.add(new region("Dornish Marches", 15, Arrays.asList(34, 28, 29), 50, Color, ImageIO.read(new File("resources/regions/dornishmarch.png")),300,800));
 //            sr.add(new region("Strom's End", 15, Arrays.asList(27, 29, 30), 50, Color, ImageIO.read(new File("resources/regions/stormsend.png"))));
 //            sr.add(new region("Rainwood", 15, Arrays.asList(29, 30), 30, Color, ImageIO.read(new File("resources/regions/rainwood.png"))));
 //            sr.add(new region("Tarth", 15, Arrays.asList(30), 30, Color, ImageIO.read(new File("resources/regions/tarth.png"))));
-//        }catch (Exception e){
-//            System.out.println("RBAR regions");
-//        }
-//
-//        return new house(name, Color, sigil, family, sr);
-//    }
+        }catch (Exception e){
+            System.out.println("RBAR regions");
+        }
+
+        allRegions.addAll(sr);
+        return new house(name, Color, sigil, family, sr);
+    }
 //
 //    public house createMartell(){
 //        String sigil = "Martell.png";

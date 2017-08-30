@@ -1,5 +1,7 @@
 package UI;
 
+import music.sounds;
+
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
@@ -12,6 +14,7 @@ import java.io.File;
  */
 public class mainMenu extends JPanel{
     public Game game;
+    sounds s = new sounds();
     Image background;
     Image title;
     Image plusplus;
@@ -28,6 +31,8 @@ public class mainMenu extends JPanel{
         JButton start = new JButton();
         JButton settings = new JButton();
         JButton quit = new JButton();
+        Thread t = new Thread(s);
+
         try {
             Image s = ImageIO.read(new File("resources/mainMenu/start.png"));
             Image ss = ImageIO.read(new File("resources/mainMenu/settings.png"));
@@ -43,7 +48,7 @@ public class mainMenu extends JPanel{
         start.setBorderPainted(false);
         start.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                game.loadHouseSelect();
+                game.loadHouseSelect(t);
             }
         });
         settings.setPreferredSize(new Dimension(500, 120));
@@ -66,6 +71,7 @@ public class mainMenu extends JPanel{
         start.setBounds(40,200,500,120);
         settings.setBounds(30,280,500,90);
         quit.setBounds(30,340,500,90);
+        t.start();
     }
 
     @Override

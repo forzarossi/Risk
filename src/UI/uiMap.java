@@ -25,6 +25,7 @@ public class uiMap extends JPanel implements KeyListener {
     region selected;
     Image w;
     Player user;
+    private Painter painter;
     public int acceleration = 2;
     BufferedImage background;
     boolean list = false;
@@ -75,6 +76,7 @@ public class uiMap extends JPanel implements KeyListener {
                 g.drawImage(background, x, y, this);
             }
         }
+
         g.drawImage(w,0,y,null);
         for(region k: regions){
             for (region r: user.getRegions()) {
@@ -91,20 +93,30 @@ public class uiMap extends JPanel implements KeyListener {
             k.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
+                   // k.setColor("gray");
                     if(!list){
                        selected = k;
                     }else{
                         target = k;
                     }
-
                     repaint();
                 }
             });
             add(k);
+            list = false;
+        }
+
+        for(region k: regions){
+            for (region r: user.getRegions()) {
+                if(r.getName() == k.getName() || k.isAdjacent(selected)){
+                    list = true;
+                }
+            }
 
             if(list){
+                g.setFont(new Font("TimesRoman", Font.BOLD, 30));
                 g.drawString(String.valueOf(k.getUnitsPresent()),k.getX()+30,k.getY()+30);
-                //yourImage.getScaledInstance(newWidth, newHeight, Image.SCALE_DEFAULT);
+                g.drawImage(user.getHouse().getSigil().getScaledInstance(25, 30, Image.SCALE_DEFAULT), k.getX()+30, k.getY()+30,null);
                 //TODO display accurately plz and on adjecent territories. Above is for mini sigils on terriroties
             }
 
@@ -130,7 +142,7 @@ public class uiMap extends JPanel implements KeyListener {
         if (key == KeyEvent.VK_DOWN || key == KeyEvent.VK_S) {
            // if(westros.getY() >= -1365) {
                 acceleration('y', '-');
-                y-=acceleration;
+                y-=30;
                 repaint();
             //}
         }
@@ -149,13 +161,12 @@ public class uiMap extends JPanel implements KeyListener {
 
     public void acceleration(char XorY, char MinusorPlus) {
         if (XorY == 'y' && MinusorPlus == '+') {
-            regions.forEach(region -> {region.setY(region.getY() + acceleration);});
-
+            regions.forEach(region -> {region.setY(region.getY() + 30);});
            // regions.forEach(region -> {region.setY(region.getY()+ accelerationValue());});
         }
 
         if (XorY == 'y' && MinusorPlus == '-') {
-            regions.forEach(region -> {region.setY(region.getY() - acceleration);});
+            regions.forEach(region -> {region.setY(region.getY() - 30);});
            // regions.forEach(region -> {region.setY(region.getY()- accelerationValue());});
         }
     }

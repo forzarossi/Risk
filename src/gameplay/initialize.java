@@ -57,13 +57,15 @@ public class initialize {
            ai[i] = new AI("Arryn", ch.createArryn(), 1,13,1000);
             i++;
         }
-// else if(houses.contains("Baratheon")){
-//            ai[i] = new AI("Baratheon", ch.createBaratheon(), 1,13);
-//            i++;
-//        }else if(houses.contains("Martell")){
+        if(houses.contains("Baratheon")){
+            ai[i] = new AI("Baratheon", ch.createBaratheon(), 1,13,1000);
+            i++;
+        }
+      //if(houses.contains("Martell")){
 //            ai[i] = new AI("Martell", ch.createMartell(), 1,13);
 //            i++;
-//        }else if(houses.contains("Targ")){
+//        }
+//      if(houses.contains("Targ")){
 //            ai[i] = new AI("Targ", ch.createTrag(), 1,13);
 //            i++;
         //}
@@ -71,7 +73,7 @@ public class initialize {
             ai[i] = new AI("Tully", ch.createTully(), 1, 13,1000);
             i++;
         }
-//        }else if(houses.contains("Tyrell")) {
+// if(houses.contains("Tyrell")) {
 //            ai[i] = new AI("Tyrell", ch.createTyrell(), 1,13);
 //            i++;
 //        }

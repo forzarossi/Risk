@@ -1,7 +1,7 @@
 package UI;
 
 import coreElements.descriptions;
-
+import music.playSelectNoise;
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
@@ -32,12 +32,15 @@ public class houseSelect extends JPanel {
     String houseDescription;
     String region;
 
-    public houseSelect(Game gm) {
+    Thread music;
+
+    public houseSelect(Game gm, Thread t) {
         game = gm;
         ds = new descriptions();
         selected = false;
         selectingHouse = true;
         confirmButton = false;
+        music = t;
         repaint();
         addHouses();
     }
@@ -265,6 +268,9 @@ public class houseSelect extends JPanel {
             confirm.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
+                    music.stop();
+                    playSelectNoise psn = new playSelectNoise();
+                    psn.playSelectNoise();
                     startGame();
                 }
             });

@@ -40,13 +40,16 @@ public class region extends JButton implements ActionListener{
         setSize(image.getWidth(),image.getHeight());
         setBorderPainted(false);
         //setDisabledIcon(new ImageIcon(getImage()));
+        setSelectedIcon(new ImageIcon(getImage()));
         setIcon(new ImageIcon(getImage()));
     }
 
     public void setColor(){
         int rgb = 0;
-        if(Color == "white"){
+        if(Color == "white") {
             rgb = new Color(255, 255, 255).getRGB();
+        }else if (Color == "gray"){
+            rgb = new Color(192, 192, 192).getRGB();
         }else if(Color == "red"){
             rgb = new Color(255, 51, 51).getRGB();
         }else if(Color == "brown"){
@@ -73,6 +76,7 @@ public class region extends JButton implements ActionListener{
             }
         }
     }
+
 
     public int getX(){
         return x;
@@ -134,7 +138,7 @@ public class region extends JButton implements ActionListener{
     public boolean isAdjacent(region attacker){
         for(int i : this.adjacent) {
             if(attacker.adjacent.contains(i)){
-                return true;
+                    return true;
             }
         }
         return false;

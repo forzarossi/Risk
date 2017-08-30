@@ -31,9 +31,9 @@ public class Game extends JFrame {
         repaint();
     }
 
-    public void loadHouseSelect() {
+    public void loadHouseSelect(Thread t) {
         remove(mm);
-        HS = new houseSelect(this);
+        HS = new houseSelect(this, t);
         getContentPane().add(HS);
         revalidate();
         repaint();
