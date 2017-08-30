@@ -128,6 +128,7 @@ public class uiMap extends JPanel implements KeyListener {
                 @Override
                 public void actionPerformed(ActionEvent e) {
                    // k.setColor("gray");
+                    requestFocusInWindow();
                     if(!list){
                        selected = k;
                     }else{

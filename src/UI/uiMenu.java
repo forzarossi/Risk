@@ -35,39 +35,35 @@ public class uiMenu extends JPanel {
     }
 
     private void buttons(){
-//        Sigil = new JButton();
-//        Sigil.setIcon(new ImageIcon(user.getHouse().getSigil()));
-//        Sigil.setPreferredSize(new Dimension(100, 120));
-//        Sigil.setBorderPainted(false);
-//        Sigil.addActionListener(new ActionListener() {
-//            @Override
-//            public void actionPerformed(ActionEvent e) {
-//
-//            }
-//        });
-//        setLayout(null);
-//        Sigil.setBounds(1075,90,100,120);
-//
-//        hourGlass = new JButton();
-//        hourGlass.setIcon(new ImageIcon(glass));
-//        hourGlass.setPreferredSize(new Dimension(100, 120));
-//        hourGlass.setBorderPainted(false);
-//        hourGlass.addActionListener(new ActionListener() {
-//            @Override
-//            public void actionPerformed(ActionEvent e) {
-//                endTurn();
-//            }
-//        });
-//        setLayout(null);
-//        hourGlass.setBounds(1075,-10,100,120);
-//
-//
-//
-//
-//
-//
-//        add(hourGlass);
-//        add(Sigil);
+        Sigil = new JButton();
+        Sigil.setIcon(new ImageIcon(user.getHouse().getSigil()));
+        Sigil.setPreferredSize(new Dimension(100, 120));
+        Sigil.setBorderPainted(false);
+        Sigil.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+            }
+        });
+        setLayout(null);
+        Sigil.setBounds(1075,90,100,120);
+
+        hourGlass = new JButton();
+        hourGlass.setIcon(new ImageIcon(glass));
+        hourGlass.setPreferredSize(new Dimension(100, 120));
+        hourGlass.setBorderPainted(false);
+        hourGlass.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                endTurn();
+            }
+        });
+        setLayout(null);
+        hourGlass.setBounds(1075,-10,100,120);
+
+        
+        add(hourGlass);
+        add(Sigil);
     }
 
     private void endTurn() {
